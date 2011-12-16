@@ -12,8 +12,8 @@ class Connector(object):
         self.gateways = [section for section in self.cfg.sections() if re.match(r'\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}', section)]
 
         self.block_commands = {
-            'in': 'access-template %s abonent_blocked %s %s any',
-            'out': 'access-template %s abonent_blocked any %s %s',
+            'in': 'access-template %s %s %s %s any',
+            'out': 'access-template %s %s any %s %s',
         }
 
     def proceed(self, gw, command):
@@ -27,13 +27,14 @@ class Connector(object):
 
     def _do_command(self, ip_addr, netmask, action):
         for gw in self.gateways:
-            for _list, _type in self.cfg.items(gw):
+            for lists, _type in self.cfg.items(gw):
                 command = self.block_commands.get(_type)
+                _list, dynamic_list = [x.strip() for x in lists.split(',')]
                 if command:
                     if action == 'block':
-                        command = command % (_list, ip_addr, netmask)
+                        command = command % (_list, dynamic_list, ip_addr, netmask)
                     else:
-                        command = 'clear ' + command % (_list, ip_addr, netmask)
+                        command = 'clear ' + command % (_list, dynamic_list, ip_addr, netmask)
                 else:
                     continue
 
