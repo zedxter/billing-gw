@@ -39,6 +39,7 @@ class Connector(object):
                 else:
                     continue
 
+                self.proceed_test(gw, command)
                 self.proceed(gw, command)
 
     def gw_block(self, ip_addr, netmask):
