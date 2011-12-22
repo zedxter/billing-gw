@@ -34,7 +34,7 @@
       <file leaf-file-name="connector.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/connector.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="9" selection-start="364" selection-end="364" vertical-scroll-proportion="0.30139372">
+            <state line="55" column="34" selection-start="2202" selection-end="2202" vertical-scroll-proportion="0.869338">
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -312,7 +312,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/connector.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="9" selection-start="364" selection-end="364" vertical-scroll-proportion="0.30139372">
+        <state line="55" column="34" selection-start="2202" selection-end="2202" vertical-scroll-proportion="0.869338">
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>

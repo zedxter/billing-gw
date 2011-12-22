@@ -17,6 +17,11 @@ class Connector(object):
             'in': 'access-template %s %s %s %s 0.0.0.0 255.255.255.255',
             'out': 'access-template %s %s 0.0.0.0 255.255.255.255 %s %s',
         }
+        self.unblock_commands = {
+            'in': 'clear access-template %s %s %s %s any',
+            'out': 'clear access-template %s %s any %s %s',
+        }
+
 
     def proceed(self, gw, command):
         self.proceed_info(gw, command)
@@ -40,13 +45,15 @@ class Connector(object):
         back_netmask = '.'.join([str(255 - int(i)) for i in netmask.split('.')])
         for gw in self.gateways:
             for lists, _type in self.cfg.items(gw):
-                command = self.block_commands.get(_type)
+
                 _list, dynamic_list = [x.strip() for x in lists.split(',')]
-                if command:
+                if _type in self.block_commands.keys() or _type in self.unblock_commands.keys():
                     if action == 'block':
+                        command = self.block_commands.get(_type)
                         command = command % (_list, dynamic_list, ip_addr, back_netmask)
                     else:
-                        command = 'clear ' + command % (_list, dynamic_list, ip_addr, back_netmask)
+                        command = self.unblock_commands.get(_type)
+                        command = command % (_list, dynamic_list, ip_addr, back_netmask)
                 else:
                     continue
 
