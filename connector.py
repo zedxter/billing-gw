@@ -6,6 +6,7 @@ from sshclient import *
 class Connector(object):
     def __init__(self):
         self.cfg = ConfigParser()
+        self.cfg.optionxform=str
         self.cfg.read('config.ini')
         self.username = self.cfg.get('access', 'username')
         self.password = self.cfg.get('access', 'password')
@@ -17,11 +18,13 @@ class Connector(object):
         }
 
     def proceed(self, gw, command):
+        self.proceed_info(gw, command)
         factory = ClientCommandFactory(self.username, self.password, command)
         reactor.connectTCP(gw, 22, factory)
         reactor.run()
+        print 'completed'
 
-    def proceed_test(self, gw, command):
+    def proceed_info(self, gw, command):
         print 'Connect to > %s, username: %s, password: %s' % (gw, self.username, self.password)
         print 'Doing: %s' % command
 
@@ -39,7 +42,6 @@ class Connector(object):
                 else:
                     continue
 
-                self.proceed_test(gw, command)
                 self.proceed(gw, command)
 
     def gw_block(self, ip_addr, netmask):

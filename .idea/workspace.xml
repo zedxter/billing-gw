@@ -34,10 +34,19 @@
       <file leaf-file-name="connector.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/connector.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="0" selection-start="1765" selection-end="1765" vertical-scroll-proportion="0.770017">
+            <state line="19" column="34" selection-start="698" selection-end="698" vertical-scroll-proportion="0.20783645">
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="config.ini" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config.ini">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="8" column="4" selection-start="82" selection-end="82" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -283,19 +292,9 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/config.ini">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="5" selection-start="0" selection-end="239" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gw_block.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="10" column="39" selection-start="228" selection-end="228" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gw_unblock.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="41" selection-start="230" selection-end="230" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sshclient.py">
@@ -307,9 +306,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/config.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="4" selection-start="82" selection-end="82" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gw_unblock.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="41" selection-start="230" selection-end="230" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/connector.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="0" selection-start="1765" selection-end="1765" vertical-scroll-proportion="0.770017">
+        <state line="19" column="34" selection-start="698" selection-end="698" vertical-scroll-proportion="0.20783645">
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
